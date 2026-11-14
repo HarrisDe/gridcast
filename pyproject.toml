@@ -23,3 +23,8 @@ dev = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/gridcast"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --cov=gridcast --cov-report=term-missing"
