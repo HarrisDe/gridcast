@@ -21,6 +21,7 @@ dev = [
     "pre-commit>=3.7",
 ]
 ml = [
+    "numpy>=1.26",
     "pandas>=2.2",
 ]
 
