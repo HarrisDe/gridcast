@@ -20,6 +20,9 @@ dev = [
     "ruff>=0.6",
     "pre-commit>=3.7",
 ]
+ml = [
+    "pandas>=2.2",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/gridcast"]
