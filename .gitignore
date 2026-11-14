@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Editor settings
+.vscode/
+
+# Project data, models and experiment outputs
+data/
+artifacts/
+mlruns/
