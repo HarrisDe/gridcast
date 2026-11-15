@@ -30,6 +30,8 @@ ml = [
 
 chronos = [
     "chronos-forecasting>=2.2",
+    "numpy>=1.26",
+    "pandas>=2.2",
     "peft>=0.13",
     "torch>=2.4",
 ]
