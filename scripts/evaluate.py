@@ -9,6 +9,7 @@ from gridcast.lgbm import LightGBMForecaster
 
 TRAIN_END = "2019-01-01"
 TEST_END = "2020-01-01"
+FINETUNED_MODEL = "artifacts/chronos2-lora-500-lr1e-4/finetuned-ckpt"
 
 
 def main() -> None:
@@ -19,6 +20,7 @@ def main() -> None:
             n_estimators=500, learning_rate=0.05, random_state=0, verbose=-1
         ).fit(df, train_end=TRAIN_END),
         "chronos2_zero_shot": ChronosForecaster(),
+        "chronos2_lora": ChronosForecaster(model_id=FINETUNED_MODEL),
     }
 
     for name, model in models.items():
