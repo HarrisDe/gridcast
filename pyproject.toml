@@ -29,6 +29,7 @@ ml = [
 
 chronos = [
     "chronos-forecasting>=2.2",
+    "peft>=0.13",
     "torch>=2.4",
 ]
 
