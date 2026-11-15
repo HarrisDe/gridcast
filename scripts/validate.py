@@ -18,6 +18,7 @@ def main() -> None:
 
     df = clean_load(load_hourly_load())
     model = ChronosForecaster(model_id=args.model_id)
+    print(f"Model: {model.model_id}")
     results = backtest(df, model, test_start=VALIDATION_START, test_end=VALIDATION_END)
     print(results.round(3).to_string(index=False))
     print(f"Mean validation MASE: {results['mase'].mean():.3f}")
