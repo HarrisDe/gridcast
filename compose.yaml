@@ -4,10 +4,6 @@ services:
     image: gridcast-api
     ports:
       - "8000:8000"
-    environment:
-      GRIDCAST_MODEL_ID: /models/adapter
-    volumes:
-      - ./artifacts/chronos2-lora-500-lr1e-4/finetuned-ckpt:/models/adapter:ro
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
       interval: 30s
