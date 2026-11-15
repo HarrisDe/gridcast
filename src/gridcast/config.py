@@ -25,7 +25,7 @@ class Settings(BaseSettings):
 
     # Forecasting task (hourly data: 24 steps = one day ahead)
     prediction_length: int = Field(default=24, ge=1, le=168)
-    context_length: int = Field(default=336, ge=24)
+    context_length: int = Field(default=1344, ge=24)
 
 
 @lru_cache
