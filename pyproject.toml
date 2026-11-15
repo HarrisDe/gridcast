@@ -27,6 +27,11 @@ ml = [
     "scikit-learn>=1.4",
 ]
 
+chronos = [
+    "chronos-forecasting>=2.2",
+    "torch>=2.4",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/gridcast"]
 

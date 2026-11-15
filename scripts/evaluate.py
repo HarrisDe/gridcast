@@ -1,6 +1,7 @@
 """Evaluate forecasters on the 2019 test period."""
 
 from gridcast.backtest import backtest
+from gridcast.chronos_model import ChronosForecaster
 from gridcast.cleaning import clean_load
 from gridcast.data import load_hourly_load
 from gridcast.forecasters import SeasonalNaive
@@ -17,6 +18,7 @@ def main() -> None:
         "lightgbm": LightGBMForecaster(
             n_estimators=500, learning_rate=0.05, random_state=0, verbose=-1
         ).fit(df, train_end=TRAIN_END),
+        "chronos2_zero_shot": ChronosForecaster(),
     }
 
     for name, model in models.items():
