@@ -206,7 +206,7 @@ Windows PowerShell:
 ```powershell
 $history = 0..335 | ForEach-Object { 1000 + 300 * [math]::Sin(2 * [math]::PI * $_ / 24) }
 $body = @{ history = $history; horizon = 24 } | ConvertTo-Json -Compress
-Invoke-RestMethod -Uri http://127.0.0.1:8000/v1/forecast -Method Post -ContentType "application/json" -Body $body
+Invoke-RestMethod -Uri http://127.0.0.1:8000/v1/forecast -Method Post -ContentType "application/json" -Body $body | ConvertTo-Json -Depth 3
 ```
 
 The response contains the model name, the horizon, and three lists of 24 hourly values: the 10th
@@ -293,7 +293,7 @@ dataset nor the model weights, and finish in a few seconds. Without the `chronos
 one test is skipped.
 
 **Step 6. Get the data.** The dataset is downloaded automatically the first time a script needs it,
-to `data/raw/opsd_time_series_60min.csv` (a CSV of more than 100 MB). To fetch it explicitly:
+to `data/raw/opsd_time_series_60min.csv` (a CSV of about 124 MB). To fetch it explicitly:
 
 ```bash
 python -c "from gridcast.data import download_raw; print(download_raw())"
