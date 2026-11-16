@@ -11,8 +11,8 @@ WORKDIR /app
 RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 # 2. Remaining dependencies, cached until pyproject.toml changes
-COPY pyproject.toml README.md ./
-RUN mkdir -p src/gridcast && touch src/gridcast/__init__.py \
+COPY pyproject.toml ./
+RUN touch README.md && mkdir -p src/gridcast && touch src/gridcast/__init__.py \
     && pip install ".[chronos,api]"
 
 # 3. Model weights baked into the image: base model, then the fine-tuned adapter

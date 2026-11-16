@@ -9,7 +9,7 @@ from gridcast.lgbm import LightGBMForecaster
 
 TRAIN_END = "2019-01-01"
 TEST_END = "2020-01-01"
-FINETUNED_MODEL = "artifacts/chronos2-lora-500-lr1e-4/finetuned-ckpt"
+FINETUNED_MODEL = "HarrisDe/chronos2-lora-eu-load"
 BASE_MODEL = "amazon/chronos-2"
 
 
